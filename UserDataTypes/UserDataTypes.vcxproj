@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{cba6cd9a-65cd-4dca-9ae4-4b946994d986}</ProjectGuid>
-    <RootNamespace>UserDataySandwhich</RootNamespace>
+    <ProjectGuid>{e0e3b15a-0039-4636-90d6-4463e2db3cb7}</ProjectGuid>
+    <RootNamespace>UserDataTypes</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,11 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Sandwhich.cpp" />
-    <ClCompile Include="UserDataySandwhich.cpp" />
+    <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="UserDataTypes.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Sandwhich.h" />
+    <ClInclude Include="Employee.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
