@@ -85,16 +85,34 @@ int main()
 	// ** ALLOCATION/DEALLOCATION **
 	//
 	// create an int pointer that points at an int allocated on the heap, set the allocated int value to some number
+	int* num;
+	num = new int(1);
 	// output the pointer value, this should be the address of the int allocated on the heap
+	cout << num << endl;
 	// output the dereference pointer
+	cout << *num << endl;
 	// deallocate the int pointer to free up the memory
-
+	delete num;
 	// create an int pointer that points at an array of ints allocated on the heap, the array size should be 4-6
-	// use a for loop and set each int in the array to a random number (use => rand() % 10 to get a random number
+	int* ptr = new int[5];
+	
+		// use a for loop and set each int in the array to a random number (use => rand() % 10 to get a random number
+		for (int i = 0; i < 5; i++)
+		{
+			ptr[i] = rand() % 10;
+		};
 	// use a for loop and output each of the ints in the array
+		for (int i = 0; i < 5; i++)
+		{
+			cout << ptr[i] << endl;
+		}
 	// use a for loop and output the address of each of the ints in the array
+		for (int i = 0; i < 5; i++)
+		{
+			cout << &ptr[i] << endl;
+		}
 	// deallocate the int pointer to free up the memory block (remember it's an array)
-
+		delete[] ptr;
 	// ** STRUCTURE **
 	//
 	// create a Person pointer that points at an array of Persons allocated on the heap, the array size should be 2
