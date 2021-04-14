@@ -94,7 +94,7 @@ int main()
 	// deallocate the int pointer to free up the memory
 	delete num;
 	// create an int pointer that points at an array of ints allocated on the heap, the array size should be 4-6
-	int* ptr = new int[5];
+	int *ptr = new int[5];
 	
 		// use a for loop and set each int in the array to a random number (use => rand() % 10 to get a random number
 		for (int i = 0; i < 5; i++)
@@ -114,7 +114,26 @@ int main()
 	// deallocate the int pointer to free up the memory block (remember it's an array)
 		delete[] ptr;
 	// ** STRUCTURE **
-	//
+		struct Person {
+			char name[50];
+			int ID;
+		};
+
+		Person *person = new Person[2];
+		for (int i = 0; i < 2; i++)
+		{
+			cout << "Enter a name: " << endl;
+			cin >> person->name;
+			cout << "Enter Person ID: " << endl;
+			cin >> person->ID;
+		}
+
+		for (int i = 0; i < 2; i++)
+		{
+			cout << person[i].name << endl;
+			cout << person[i].ID << endl;
+		}
+		
 	// create a Person pointer that points at an array of Persons allocated on the heap, the array size should be 2
 	// read in a name from the console and set it to the person name, do this for the id also, do this for both Persons
 	// use a for loop and output the name and id of each person in the array 
