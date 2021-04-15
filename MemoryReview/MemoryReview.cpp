@@ -123,9 +123,9 @@ int main()
 		for (int i = 0; i < 2; i++)
 		{
 			cout << "Enter a name: " << endl;
-			cin >> person->name;
+			cin >> person[i].name;
 			cout << "Enter Person ID: " << endl;
-			cin >> person->ID;
+			cin >> person[i].ID;
 		}
 
 		for (int i = 0; i < 2; i++)
@@ -133,6 +133,8 @@ int main()
 			cout << person[i].name << endl;
 			cout << person[i].ID << endl;
 		}
+		
+		delete[] person;
 		
 	// create a Person pointer that points at an array of Persons allocated on the heap, the array size should be 2
 	// read in a name from the console and set it to the person name, do this for the id also, do this for both Persons
