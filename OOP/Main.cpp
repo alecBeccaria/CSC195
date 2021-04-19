@@ -23,6 +23,11 @@ int main()
 	{
 		animal->Speak();
 	}
+
+	for (Animal* animal : animals)
+	{
+		delete animal;
+	}
 	
 	Bird bird(12, 10.0f);
 	bird.Speak();
