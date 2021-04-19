@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Memory", "Memory\Memory.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MemoryReview", "MemoryReview\MemoryReview.vcxproj", "{E84F5ED4-7A32-4FA6-80C1-309BEDAD32BD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OOP", "OOP\OOP.vcxproj", "{C028DA4F-40FF-48EC-BB31-2997AC590733}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{E84F5ED4-7A32-4FA6-80C1-309BEDAD32BD}.Release|x64.Build.0 = Release|x64
 		{E84F5ED4-7A32-4FA6-80C1-309BEDAD32BD}.Release|x86.ActiveCfg = Release|Win32
 		{E84F5ED4-7A32-4FA6-80C1-309BEDAD32BD}.Release|x86.Build.0 = Release|Win32
+		{C028DA4F-40FF-48EC-BB31-2997AC590733}.Debug|x64.ActiveCfg = Debug|x64
+		{C028DA4F-40FF-48EC-BB31-2997AC590733}.Debug|x64.Build.0 = Debug|x64
+		{C028DA4F-40FF-48EC-BB31-2997AC590733}.Debug|x86.ActiveCfg = Debug|Win32
+		{C028DA4F-40FF-48EC-BB31-2997AC590733}.Debug|x86.Build.0 = Debug|Win32
+		{C028DA4F-40FF-48EC-BB31-2997AC590733}.Release|x64.ActiveCfg = Release|x64
+		{C028DA4F-40FF-48EC-BB31-2997AC590733}.Release|x64.Build.0 = Release|x64
+		{C028DA4F-40FF-48EC-BB31-2997AC590733}.Release|x86.ActiveCfg = Release|Win32
+		{C028DA4F-40FF-48EC-BB31-2997AC590733}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
