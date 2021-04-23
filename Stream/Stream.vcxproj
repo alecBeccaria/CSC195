@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6fce4003-d260-487e-9747-b1c34fef4a3e}</ProjectGuid>
-    <RootNamespace>Database</RootNamespace>
+    <ProjectGuid>{2ba9c3ce-5cf8-4717-bb46-75c39929d4d3}</ProjectGuid>
+    <RootNamespace>Stream</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,17 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Animal.cpp" />
-    <ClCompile Include="Bird.cpp" />
-    <ClCompile Include="Database.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Reptile.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Animal.h" />
-    <ClInclude Include="Bird.h" />
-    <ClInclude Include="Database.h" />
-    <ClInclude Include="Reptile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

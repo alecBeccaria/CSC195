@@ -22,7 +22,7 @@ int main()
 		case 1:
 		{
 			std::cout << "1) Bird\n";
-			std::cout << "1) Mammal\n";
+			std::cout << "2) Mammal\n";
 			int type;
 			std::cin >> type;
 			database.Create(static_cast<Animal::eType>(type));
@@ -42,7 +42,7 @@ int main()
 		case 4:
 		{
 			std::cout << "1) Bird\n";
-			std::cout << "1) Mammal\n";
+			std::cout << "2) Mammal\n";
 			int type;
 			std::cin >> type;
 			database.Display(static_cast<Animal::eType>(type));
