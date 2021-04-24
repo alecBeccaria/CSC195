@@ -6,7 +6,7 @@ void Bird::Read(std::ostream& ostream, std::istream& istream)
 	Animal::Read(ostream, istream);
 
 	ostream << "Enter Num of Eggs: ";
-	istream >> m_lifespan;
+	istream >> m_numEggs;
 }
 
 void Bird::Write(std::ostream& ostream)

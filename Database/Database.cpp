@@ -1,5 +1,6 @@
 #include "Database.h"
 #include "Bird.h"
+#include "Reptile.h"
 #include <iostream>
 
 
@@ -20,7 +21,8 @@ void Database::Create(Animal::eType type)
 	case Animal::eType::Bird:
 		animal = new Bird;
 		break;
-	case Animal::eType::Mammal:
+	case Animal::eType::Reptile:
+		animal = new Reptile;
 		break;
 	default:
 		break;
