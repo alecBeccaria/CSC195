@@ -15,6 +15,8 @@ public:
 
 	virtual void Read(std::ostream& ostream, std::istream& istream);
 	virtual void Write(std::ostream& ostream);
+	virtual void Read(std::ifstream& istream);
+	virtual void Write(std::ofstream& ostream);
 
 protected:
 	std::string m_name;
