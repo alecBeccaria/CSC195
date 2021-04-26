@@ -7,7 +7,7 @@ public:
 	enum class eType
 	{
 		Bird = 1,
-		Reptile,
+		Reptile
 	};
 public:
 	std::string GetName() { return m_name; }

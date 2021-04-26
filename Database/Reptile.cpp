@@ -9,7 +9,7 @@ void Reptile::Read(std::ostream& ostream, std::istream& istream)
 	istream >> m_numTeeth;
 }
 
-void Reptile ::Write(std::ostream& ostream)
+void Reptile::Write(std::ostream& ostream)
 {
 	Animal::Write(ostream);
 	ostream << "Number of Teeth: " << m_numTeeth << std::endl;
