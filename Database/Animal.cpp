@@ -28,3 +28,27 @@ void Animal::Write(std::ofstream& ostream)
 	ostream << m_name << std::endl; 
 	ostream << m_lifespan << std::endl;
 }
+
+std::istream& operator>>(std::istream& istream, Animal& animal)
+{
+	animal.Read(std::cout, istream);
+	return istream;
+}
+
+std::ostream& operator<<(std::ostream& ostream, Animal& animal)
+{
+	animal.Write(ostream);
+	return ostream;
+}
+
+std::ifstream& operator>>(std::ifstream& istream, Animal& animal)
+{
+	animal.Read(istream);
+	return istream;
+}
+
+std::ofstream& operator<<(std::ofstream& ostream, Animal& animal)
+{
+	animal.Write(ostream);
+	return ostream;
+}

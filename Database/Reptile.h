@@ -1,9 +1,10 @@
 #pragma once
 #include "Animal.h"
+#include <string>
 class Reptile : public Animal
 {
 public:
-	virtual eType GetType() { return Animal::eType::Reptile; }
+	virtual eType GetType() override { return Animal::eType::Reptile; }
 
 	void Read(std::ostream& ostream, std::istream& istream) override;
 	void Write(std::ostream& ostream) override;
