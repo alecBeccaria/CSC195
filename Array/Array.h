@@ -8,7 +8,7 @@ namespace ar
 	public:
 		array();
 		array(const std::initializer_list<int>& ilist);
-		int& operator [] (size_t position) const;
+		int& operator [] (size_t position);
 		int& at(size_t position);
 		const int& at(size_t position) const;
 

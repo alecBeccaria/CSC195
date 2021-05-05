@@ -16,50 +16,79 @@ ar::array::array(const std::initializer_list<int>& ilist)
 
 }
 
-int& ar::array::operator[](size_t position) const
+int& ar::array::operator[](size_t position) 
 {
-
+	return m_elements[position];
 }
 
 int& ar::array::at(size_t position)
 {
-	// TODO: insert return statement here
+	return m_elements[position];
 }
 
 const int& ar::array::at(size_t position) const
 {
-	// TODO: insert return statement here
+	return m_elements[position];
 }
 
 int& ar::array::front()
 {
-	// TODO: insert return statement here
+	return m_elements[0];
 }
 
 int& ar::array::back()
 {
-	// TODO: insert return statement here
+	return m_elements[m_size - 1];
 }
 
 int* ar::array::data()
 {
-	return nullptr;
+	return m_elements;
 }
 
 void ar::array::fill(int value)
 {
+	for (int i = 0; i < m_size; i++)
+	{
+		m_elements[i] = value;
+	}
 }
 
 void ar::array::swap(array& other)
 {
+	int temp;
+
+	int temp2;
+	for (int i = 0; i < m_size; i++)
+	{
+		temp = m_elements[i];
+		temp2 = other[i];
+		m_elements[i] = temp2;
+		other[i] = temp;
+		 
+
+	}
+
 }
 
 bool ar::array::empty() const
 {
-	return false;
+	for (int i = 0; i < m_size; i++)
+	{
+		if (m_elements[i] == NULL)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
 }
 
 size_t ar::array::size() const
 {
-	return size_t();
+	
+	return m_size;
 }

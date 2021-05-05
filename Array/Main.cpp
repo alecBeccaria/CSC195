@@ -1,7 +1,7 @@
 #include "Array.h"
 #include <iostream>
 
-void DisplayArray(const ar::array& a)
+void DisplayArray(ar::array& a)
 {
 	for (size_t i = 0; i < a.size(); i++)
 	{
@@ -17,7 +17,7 @@ int main()
 	numbers[0] = 25;
 	DisplayArray(numbers);
 
-	/*std::cout << "copy\n";
+	std::cout << "copy\n";
 	ar::array copy{ numbers };
 	copy[0] = 50;
 	copy[4] = 8;
@@ -35,5 +35,5 @@ int main()
 	std::cout << "front: " << numbers.front() << std::endl;
 	std::cout << "back: " << numbers.back() << std::endl;
 	std::cout << "size: " << numbers.size() << std::endl;
-	std::cout << "data: " << numbers.data() << std::endl;*/
+	std::cout << "data: " << numbers.data() << std::endl;
 }
