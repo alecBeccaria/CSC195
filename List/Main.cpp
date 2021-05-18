@@ -17,7 +17,7 @@ int main()
 	copy.pop_back();
 	copy.write(std::cout);
 
-	/*std::cout << "remove\n";
+	std::cout << "remove\n";
 	copy.remove(12);
 	copy.write(std::cout);
 
@@ -25,7 +25,7 @@ int main()
 	copy.resize(10, 99);
 	copy.write(std::cout);
 
-	std::cout << "reverse\n";
+	/*std::cout << "reverse\n";
 	numbers.reverse();
 	numbers.write(std::cout);*/
 

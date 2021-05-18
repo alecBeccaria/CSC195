@@ -37,9 +37,9 @@ namespace nc
 		void push_back(const T& value);
 		void pop_back();
 
-		void remove(const T& value) { return nullptr; }//Remove function in teams
+		void remove(const T& value);
 		void reverse(); // see references for implementation
-		void resize(size_t count, const T& value = T{});
+		void resize(size_t new_size, const T& value);
 		void clear(); // search online for implementation
 
 		bool empty() { return (size() == 0); }
@@ -93,6 +93,40 @@ namespace nc
 	{
 		//clear();
 	};
+
+	template<typename T>
+	void list<T>::resize(size_t new_size, const T& value)
+	{
+		while (size() > new_size) pop_back();
+		while (size() < new_size) push_back(value);
+	}
+
+	template<typename T>
+	void list<T>::remove(const T& value)
+	{
+		node_t* node = _head;
+		while(node)
+		{
+			if (node->_value == value)
+			{
+				node_t* next_node = node->_next;
+				node_t* prev_node = node->_prev;
+				if (prev_node) prev_node->_next = next_node;
+				if (next_node) next_node->_prev = prev_node;
+
+				if (_head == node)
+				{
+					_head = next_node;
+				}
+				delete node;
+				node = next_node;
+			}
+			else 
+			{
+				node = node->_next;
+			}
+		}
+	}
 
 	template<typename T>
 	void list<T>::push_front(const T& value)
