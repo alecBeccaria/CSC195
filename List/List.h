@@ -37,27 +37,31 @@ namespace nc
 		void push_back(const T& value);
 		void pop_back();
 
-		void remove(const T& value) { return nullptr; }//Remove function in teams
+		void remove(const T& value);
 		void reverse(); // see references for implementation
-		void resize(size_t count, const T& value = T{});
+		void resize(size_t new_size, const T& value);
 		void clear(); // search online for implementation
-
-		bool empty() { return (size() == 0); }
-		size_t size() { return 0; } // see references for implementation
-		size_t max_size() { return std::numeric_limits<size_t>::max(); }
+		
+		bool empty() { return (size() == 0); };
+		size_t size() { return counter; };
+		size_t max_size() { return std::numeric_limits<size_t>::max(); };
 
 		std::ostream& write(std::ostream& stream);
 
 	private:
 		node_t* tail();
+		int counter = 0;
 
 	private:
 		node_t* _head{ nullptr };
 	};
 
+	
+
 	template<typename T>
 	list<T>::list(const std::initializer_list<T>& ilist)
 	{
+		
 		for (auto iter = ilist.begin(); iter != ilist.end(); iter++)
 		{
 			push_back(*iter);
@@ -80,6 +84,7 @@ namespace nc
 	template<typename T>
 	list<T>::list(const list& other)
 	{
+		
 		node_t* node = other._head;
 		while (node)
 		{
@@ -91,8 +96,46 @@ namespace nc
 	template<typename T>
 	list<T>::~list()
 	{
-		//clear();
+		delete _head;
 	};
+
+
+	
+	template<typename T>
+	void list<T>::resize(size_t new_size, const T& value)
+	{
+		while (size() > new_size) pop_back();
+		
+		while (size() < new_size) push_back(value);
+		
+	}
+
+	template<typename T>
+	void list<T>::remove(const T& value)
+	{
+		node_t* node = _head;
+		while(node)
+		{
+			if (node->_value == value)
+			{
+				node_t* next_node = node->_next;
+				node_t* prev_node = node->_prev;
+				if (prev_node) prev_node->_next = next_node;
+				if (next_node) next_node->_prev = prev_node;
+
+				if (_head == node)
+				{
+					_head = next_node;
+				}
+				delete node;
+				node = next_node;
+			}
+			else 
+			{
+				node = node->_next;
+			}
+		}
+	}
 
 	template<typename T>
 	void list<T>::push_front(const T& value)
@@ -115,6 +158,7 @@ namespace nc
 			_head = _head->_next;
 			_head->_prev = nullptr;
 			delete temp_node;
+			counter--;
 		}
 	};
 
@@ -131,7 +175,9 @@ namespace nc
 			node_t* tail_node = tail();
 			tail_node->_next = new_node;
 			new_node->_prev = tail_node;
+			counter++;
 		}
+		
 	};
 
 	template<typename T>
@@ -151,6 +197,7 @@ namespace nc
 			}
 		}
 		delete tail_node;
+		counter--;
 	}
 	template<typename T>
 	typename list<T>::node_t* list<T>::tail()
