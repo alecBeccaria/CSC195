@@ -135,9 +135,7 @@ int main()
 
     }
 
-    int* i = new int{ 5 };
-    std::cout << *i << std::endl;;
-    
+    std::shared_ptr<int> sp{ new int{15} };
 
 
 	_CrtDumpMemoryLeaks();
