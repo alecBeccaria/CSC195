@@ -1,5 +1,6 @@
 #include <iostream>
 #include <memory>
+#include <list>
 
 #define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
@@ -105,6 +106,24 @@ private:
     ref_count* _ref{};
 };
 
+class Employee
+{
+public:
+    Employee(const std::string& name) : _name{ name } {}
+
+    std::string& GetName() { return _name; }
+
+    friend bool operator == (const std::unique_ptr<Employee>& employee, const std::string& name)
+    {
+        return employee->_name == name;
+    }
+
+private:
+    std::string _name;
+};
+
+
+
 int main()
 {
 	int* p = new int{ 5 };
@@ -134,8 +153,38 @@ int main()
        
 
     }
+    {
+        std::shared_ptr<int> sp{ new int{15} };
+    }
+    
 
-    std::shared_ptr<int> sp{ new int{15} };
+    {
+        std::list<std::unique_ptr<Employee>> employees;
+        employees.push_back(std::make_unique<Employee>("The Boi"));
+        employees.push_back(std::make_unique<Employee>("The Gorl"));
+        employees.push_back(std::make_unique<Employee>("The Kid"));
+
+        for (auto& employee : employees)
+        {
+            std::cout << employee->GetName() << std::endl;
+        }
+
+        for (auto iter = employees.begin(); iter != employees.end(); iter++)
+        {
+            iter = std::find(iter, employees.end(), "Bruce");
+            if (iter != employees.end())
+            {
+                std::cout << (*iter)->GetName() << std::endl;
+                iter = employees.erase(iter);
+                
+            }
+
+           
+        }
+
+        employees.clear();
+        
+    }
 
 
 	_CrtDumpMemoryLeaks();
