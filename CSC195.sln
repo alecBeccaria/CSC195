@@ -39,6 +39,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Iterators", "Iterators\Iter
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointers", "Pointers\Pointers.vcxproj", "{73747C3B-4942-4785-B100-E79A1BC3362E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bits", "Bits\Bits.vcxproj", "{CE167018-1F6D-41D7-ABF7-B1CB61F820BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -191,6 +193,14 @@ Global
 		{73747C3B-4942-4785-B100-E79A1BC3362E}.Release|x64.Build.0 = Release|x64
 		{73747C3B-4942-4785-B100-E79A1BC3362E}.Release|x86.ActiveCfg = Release|Win32
 		{73747C3B-4942-4785-B100-E79A1BC3362E}.Release|x86.Build.0 = Release|Win32
+		{CE167018-1F6D-41D7-ABF7-B1CB61F820BD}.Debug|x64.ActiveCfg = Debug|x64
+		{CE167018-1F6D-41D7-ABF7-B1CB61F820BD}.Debug|x64.Build.0 = Debug|x64
+		{CE167018-1F6D-41D7-ABF7-B1CB61F820BD}.Debug|x86.ActiveCfg = Debug|Win32
+		{CE167018-1F6D-41D7-ABF7-B1CB61F820BD}.Debug|x86.Build.0 = Debug|Win32
+		{CE167018-1F6D-41D7-ABF7-B1CB61F820BD}.Release|x64.ActiveCfg = Release|x64
+		{CE167018-1F6D-41D7-ABF7-B1CB61F820BD}.Release|x64.Build.0 = Release|x64
+		{CE167018-1F6D-41D7-ABF7-B1CB61F820BD}.Release|x86.ActiveCfg = Release|Win32
+		{CE167018-1F6D-41D7-ABF7-B1CB61F820BD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
