@@ -1,6 +1,9 @@
 #pragma once
 #include "Animal.h"
 #include <vector>
+#include <list>
+#include <memory>
+
 class Database
 {
 public:
@@ -12,9 +15,11 @@ public:
 	void Load(const std::string& filename);
 	void Save(const std::string& filename);
 	
+	void Remove(const std::string& name);
+	void Remove(Animal::eType type);
 	void RemoveAll();
 private:
-	Animal* Create(Animal::eType type);
-	std::vector<Animal*> animals;
+	std::unique_ptr<Animal> Create(Animal::eType type);
+	std::list<std::unique_ptr<Animal>> animals;
 };
 

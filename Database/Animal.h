@@ -9,7 +9,7 @@ public:
 	enum class eType
 	{
 		Bird = 1,
-		Reptile
+		Reptile = 2
 	};
 public:
 	std::string GetName() { return m_name; }
@@ -25,6 +25,11 @@ public:
 
 	friend std::ifstream& operator >> (std::ifstream& istream, Animal& animal);
 	friend std::ofstream& operator << (std::ofstream& ostream, Animal& animal);
+
+	friend bool operator == (const std::unique_ptr<Animal>& animal, const std::string& name);
+	friend bool operator == (const std::unique_ptr<Animal>& animal, eType type);
+	
+
 
 protected:
 	std::string m_name;
