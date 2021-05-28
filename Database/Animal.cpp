@@ -52,3 +52,13 @@ std::ofstream& operator<<(std::ofstream& ostream, Animal& animal)
 	animal.Write(ostream);
 	return ostream;
 }
+
+bool operator == (const std::unique_ptr<Animal>& animal, Animal::eType type)
+{
+	return animal->GetType() == type;
+}
+
+bool operator == (const std::unique_ptr<Animal>& animal, const std::string& name)
+{
+	return  animal->GetName() == name;
+}

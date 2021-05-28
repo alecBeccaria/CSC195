@@ -6,23 +6,23 @@
 
 
 Database::~Database() {
-	for (Animal* animal : animals)
+	for (auto& animal : animals)
 	{
-		delete animal;
+		delete &animal;
 	}
 	animals.clear();
 }
 
 void Database::Add(Animal::eType type)
 {
-	Animal* animal = Create(type); 
+	std::unique_ptr<Animal> animal = Create(type); 
 	std::cin >> *animal;
-	animals.push_back(animal);
+	animals.push_back(std::move(animal));
 }
 
 void Database::DisplayAll()
 {
-	for (Animal * animal : animals)
+	for (auto& animal : animals)
 	{
 		std::cout << *animal;
 	
@@ -33,7 +33,7 @@ void Database::DisplayAll()
 
 void Database::Display(std::string name)
 {
-	for (Animal* animal : animals)
+	for (auto& animal : animals)
 	{
 		if (name == animal->GetName())
 		{
@@ -54,15 +54,15 @@ void Database::Load(const std::string& filename)
 
 	if (input.is_open())
 	{
-		//RemoveAll();
+		RemoveAll();
 		while (!input.eof())
 		{
 			int type;
 			input >> type;
 
-			Animal* animal = Create(static_cast<Animal::eType>(type));
+			std::unique_ptr<Animal> animal = Create(static_cast<Animal::eType>(type));
 			input >> *animal;
-			animals.push_back(animal);
+			animals.push_back(std::move(animal));
 			
 		}
 	}
@@ -74,15 +74,39 @@ void Database::Save(const std::string& filename)
 	std::ofstream output(filename);
 	if (output.is_open())
 	{
-		for (Animal* animal : animals)
+		for (auto& animal : animals)
 		{
-			output << static_cast<int>(animal->GetType()) << std::endl;
+			output << "\n" << static_cast<int>(animal->GetType()) << std::endl;
 			output << *animal;
 		}
 	}
 }
 
-Animal* Database::Create(Animal::eType type)
+void Database::Remove(const std::string& name)
+{
+	for (auto iter = animals.begin(); iter != animals.end();)
+	{
+		iter = std::find(iter, animals.end(), name);
+		if (iter != animals.end())
+		{
+			iter = animals.erase(iter);
+		}
+	}
+}
+
+void Database::Remove(Animal::eType type)
+{
+	for (auto iter = animals.begin(); iter != animals.end();)
+	{
+		iter = std::find(iter, animals.end(), type);
+		if (iter != animals.end())
+		{
+			iter = animals.erase(iter);
+		}
+	}
+}
+
+std::unique_ptr<Animal> Database::Create(Animal::eType type)
 {
 	Animal* animal = nullptr;
 	switch (type)
@@ -96,14 +120,10 @@ Animal* Database::Create(Animal::eType type)
 	default:
 		break;
 	}
-	return animal;
+	return std::unique_ptr<Animal>{animal};
 }
 
 void Database::RemoveAll()
 {
-	for (Animal* animal : animals)
-	{
-		delete animal;
-	}
 	animals.clear();
 }

@@ -1,7 +1,9 @@
+
 1
-alec
-12
-31
-BirdBoy
-58
-39
+Bird
+23
+23
+2
+Reptile
+67
+5454

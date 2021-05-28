@@ -113,10 +113,12 @@ public:
 
     std::string& GetName() { return _name; }
 
-    friend bool operator == (const std::unique_ptr<Employee>& employee, const std::string& name)
+   /* friend bool operator == (const std::unique_ptr<Employee>& employee, const std::string& name)
     {
         return employee->_name == name;
-    }
+    }*/
+
+    
 
 private:
     std::string _name;
